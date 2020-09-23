@@ -22,7 +22,9 @@ import {
   Col,
   FormGroup,
   ControlLabel,
-  FormControl
+  FormControl,
+  DropdownButton,
+  Dropdown
 } from "react-bootstrap";
 
 import { Card } from "components/Card/Card.jsx";
@@ -36,7 +38,7 @@ class TaoChienDich extends Component {
       <div className="content">
         <form>
           <FormInputs
-            ncols={["col-md-5", "col-md-3", "col-md-4"]}
+            ncols={["col-md-5", "col-md-5"]}
             properties={[
               {
                 label: "Tên Chiến Dịch",
@@ -50,12 +52,6 @@ class TaoChienDich extends Component {
                 bsClass: "form-control",
                 required: true,
               },
-              {
-                label: "Email address",
-                type: "email",
-                bsClass: "form-control",
-                placeholder: "Email"
-              }
             ]}
           />
           <FormInputs
@@ -132,7 +128,7 @@ class TaoChienDich extends Component {
           </Row>
           <Button bsStyle="info" pullRight fill type="submit">
             Update Profile
-                    </Button>
+          </Button>
           <div className="clearfix" />
         </form>
       </div>
