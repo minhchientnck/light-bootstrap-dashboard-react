@@ -8,7 +8,7 @@ class Wrapper extends Component {
       <div className="limiter">
         <div className="container-login100">
           <div className="wrap-login100">
-            <div className="logo">
+            <div className="logo-login">
               <a href="#" className="simple-text logo-mini">
                 <div className="logo-img">
                   {/* <img src={logo} alt="logo_image" /> */}

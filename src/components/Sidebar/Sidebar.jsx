@@ -16,7 +16,7 @@
 
 */
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.jsx";
 
@@ -56,20 +56,14 @@ class Sidebar extends Component {
             null
           )}
         <div className="logo">
-          <a
-            href="https://www.creative-tim.com?ref=lbd-sidebar"
-            className="simple-text logo-mini"
-          >
+          <Link to="/dashboard" className="simple-text logo-mini">
             <div className="logo-img">
               <img src={logo} alt="logo_image" />
             </div>
-          </a>
-          <a
-            href="https://www.creative-tim.com?ref=lbd-sidebar"
-            className="simple-text logo-normal"
-          >
+          </Link>
+          <Link to="/dashboard" className="simple-text logo-normal">
             Vượt Link
-          </a>
+          </Link>
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
