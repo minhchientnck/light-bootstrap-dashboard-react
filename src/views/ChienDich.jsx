@@ -16,8 +16,9 @@
 
 */
 import React, { Component } from "react";
-import { Grid, Row, Col, Table, Button } from "react-bootstrap";
+import { Tooltip, OverlayTrigger, Grid, Row, Col, Table, Button } from "react-bootstrap";
 
+import CustomButton from "components/CustomButton/CustomButton.jsx";
 import Card from "components/Card/Card.jsx";
 import { thArray, tdArray } from "variables/Variables.jsx";
 import TaoChienDich from './TaoChienDich';
@@ -31,22 +32,22 @@ class ChienDich extends Component {
   }
 
   taoChienDich = () => {
-    this.setState({ 
+    this.setState({
       isCreate: true
     });
   }
 
   backToChienDich = () => {
-    this.setState({ 
+    this.setState({
       isCreate: false
     });
   }
 
-  editCHienDich = () => {
+  editChienDich = () => {
     this.taoChienDich();
   }
 
-  deleteCHienDich = () => {
+  deleteChienDich = () => {
 
   }
 
@@ -65,39 +66,47 @@ class ChienDich extends Component {
                 content={
                   <Table striped hover>
                     <thead>
-                        <tr>
-                          {thArray.map((prop, key) => {
-                            return <th key={key}>{prop}</th>;
-                          })}
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                    <tbody>
-                        {tdArray.map((prop, key) => {
-                          return (
-                            <tr key={key}>
-                              {prop.map((prop, key) => {
-                                return <td key={key}>{prop}</td>;
-                              })}
-                              <td>
-                                <Button onClick={this.editCHienDich}><i className="pe-7s-trash" /></Button>&nbsp;&nbsp;
-                                <Button onClick={this.deleteCHienDich}><i className="pe-7s-pen" /></Button>
-                              </td>
-                            </tr>
-                          );
+                      <tr>
+                        {thArray.map((prop, key) => {
+                          return <th key={key}>{prop}</th>;
                         })}
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tdArray.map((prop, key) => {
+                        return (
+                          <tr key={key}>
+                            {prop.map((prop, key) => {
+                              return <td key={key}>{prop}</td>;
+                            })}
+                            <td>
+                              <OverlayTrigger placement="top" overlay={<Tooltip id="edit_tooltip">Edit Task</Tooltip>}>
+                                <CustomButton onClick={this.editChienDich} bsStyle="info" simple type="button" bsSize="xs">
+                                  <i className="fa fa-edit" />
+                                </CustomButton>
+                              </OverlayTrigger>
+                              <OverlayTrigger placement="top" overlay={<Tooltip id="remove_tooltip">Remove</Tooltip>}>
+                                <CustomButton onClick={this.deleteChienDich} bsStyle="danger" simple type="button" bsSize="xs">
+                                  <i className="fa fa-times" />
+                                </CustomButton>
+                              </OverlayTrigger>
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </Table>
                 }
               /> :
-               <Card
-                title="Tạo Chiến Dịch"
-                category=""
-                ctTableFullWidth
-                ctTableResponsive
-                actions={<Button onClick={this.backToChienDich}>Back</Button>}
-                content={<TaoChienDich />}
-             />}
+                <Card
+                  title="Tạo Chiến Dịch"
+                  category=""
+                  ctTableFullWidth
+                  ctTableResponsive
+                  actions={<Button onClick={this.backToChienDich}>Back</Button>}
+                  content={<TaoChienDich />}
+                />}
             </Col>
           </Row>
         </Grid>

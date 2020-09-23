@@ -16,7 +16,7 @@
 
 */
 import React, { Component } from "react";
-import ChartistGraph from "react-chartist";
+import { Line, Bar } from "react-chartjs-2";
 import { Grid, Row, Col } from "react-bootstrap";
 
 import { Card } from "components/Card/Card.jsx";
@@ -34,6 +34,12 @@ import {
   responsiveBar,
   legendBar
 } from "variables/Variables.jsx";
+
+import {
+  dashboardPanelChart,
+  dashboardShippedProductsChart,
+  dashboardAllProductsChart,
+} from "variables/charts.jsx";
 
 class Dashboard extends Component {
   createLegend(json) {
@@ -98,12 +104,10 @@ class Dashboard extends Component {
                 stats="Updated 3 minutes ago"
                 content={
                   <div className="ct-chart">
-                    <ChartistGraph
-                      data={dataSales}
-                      type="Line"
-                      options={optionsSales}
-                      responsiveOptions={responsiveSales}
-                    />
+                   <Line
+                    data={dashboardPanelChart.data}
+                    options={dashboardPanelChart.options}
+                  />
                   </div>
                 }
                 legend={
@@ -122,7 +126,10 @@ class Dashboard extends Component {
                     id="chartPreferences"
                     className="ct-chart ct-perfect-fourth"
                   >
-                    <ChartistGraph data={dataPie} type="Pie" />
+                     <Line
+                      data={dashboardShippedProductsChart.data}
+                      options={dashboardShippedProductsChart.options}
+                    />
                   </div>
                 }
                 legend={
@@ -142,11 +149,9 @@ class Dashboard extends Component {
                 statsIcon="fa fa-check"
                 content={
                   <div className="ct-chart">
-                    <ChartistGraph
-                      data={dataBar}
-                      type="Bar"
-                      options={optionsBar}
-                      responsiveOptions={responsiveBar}
+                    <Line
+                      data={dashboardAllProductsChart.data}
+                      options={dashboardAllProductsChart.options}
                     />
                   </div>
                 }

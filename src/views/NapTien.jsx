@@ -20,7 +20,7 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import Card from "components/Card/Card.jsx";
 
-class HuongDan extends Component {
+class NapTien extends Component {
   render() {
     return (
       <div className="content">
@@ -28,7 +28,7 @@ class HuongDan extends Component {
           <Row>
             <Col md={12}>
               <Card
-                title="Các Câu Hỏi"
+                title="Lịch sử Nạp Tiền"
                 category=""
                 content={null}
               />
@@ -40,4 +40,4 @@ class HuongDan extends Component {
   }
 }
 
-export default HuongDan;
+export default NapTien;

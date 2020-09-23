@@ -39,19 +39,16 @@ class TaoChienDich extends Component {
             ncols={["col-md-5", "col-md-3", "col-md-4"]}
             properties={[
               {
-                label: "Company (disabled)",
+                label: "Tên Chiến Dịch",
                 type: "text",
                 bsClass: "form-control",
-                placeholder: "Company",
-                defaultValue: "Creative Code Inc.",
-                disabled: true
+                required: true,
               },
               {
-                label: "Username",
+                label: "Tên Miền",
                 type: "text",
                 bsClass: "form-control",
-                placeholder: "Username",
-                defaultValue: "michael23"
+                required: true,
               },
               {
                 label: "Email address",

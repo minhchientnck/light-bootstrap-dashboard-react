@@ -20,6 +20,7 @@ import UserProfile from "views/UserProfile.jsx";
 import TenMien from "views/TenMien.jsx";
 import ChienDich from "views/ChienDich.jsx";
 import ThongKe from "views/ThongKe.jsx";
+import NapTien from "views/NapTien.jsx";
 import HuongDan from "views/HuongDan.jsx";
 
 import Typography from "views/Typography.jsx";
@@ -53,7 +54,7 @@ const dashboardRoutes = [
     path: "/nap-tien",
     name: "Nạp Tiền $$$",
     icon: "pe-7s-cash",
-    component: Typography,
+    component: NapTien,
     layout: "/admin"
   },
   {
@@ -77,27 +78,27 @@ const dashboardRoutes = [
     component: UserProfile,
     layout: "/admin"
   },
-  {
-    path: "/icon",
-    name: "Icon",
-    icon: "pe-7s-graph3",
-    component: Icons,
-    layout: "/admin"
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    icon: "pe-7s-map-marker",
-    component: Maps,
-    layout: "/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: "pe-7s-bell",
-    component: Notifications,
-    layout: "/admin"
-  },
+  // {
+  //   path: "/icon",
+  //   name: "Icon",
+  //   icon: "pe-7s-graph3",
+  //   component: Icons,
+  //   layout: "/admin"
+  // },
+  // {
+  //   path: "/maps",
+  //   name: "Maps",
+  //   icon: "pe-7s-map-marker",
+  //   component: Maps,
+  //   layout: "/admin"
+  // },
+  // {
+  //   path: "/notifications",
+  //   name: "Notifications",
+  //   icon: "pe-7s-bell",
+  //   component: Notifications,
+  //   layout: "/admin"
+  // },
 ];
 
 export default dashboardRoutes;
