@@ -80,8 +80,8 @@ class ChienDich extends Component {
                                 return <td key={key}>{prop}</td>;
                               })}
                               <td>
-                                <Button onClick={this.editCHienDich}>Edit</Button>&nbsp;&nbsp;
-                                <Button onClick={this.deleteCHienDich}>Delete</Button>
+                                <Button onClick={this.editCHienDich}><i className="pe-7s-trash" /></Button>&nbsp;&nbsp;
+                                <Button onClick={this.deleteCHienDich}><i className="pe-7s-pen" /></Button>
                               </td>
                             </tr>
                           );

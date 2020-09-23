@@ -19,6 +19,9 @@ import Dashboard from "views/Dashboard.jsx";
 import UserProfile from "views/UserProfile.jsx";
 import TenMien from "views/TenMien.jsx";
 import ChienDich from "views/ChienDich.jsx";
+import ThongKe from "views/ThongKe.jsx";
+import HuongDan from "views/HuongDan.jsx";
+
 import Typography from "views/Typography.jsx";
 import Icons from "views/Icons.jsx";
 import Maps from "views/Maps.jsx";
@@ -55,7 +58,28 @@ const dashboardRoutes = [
   },
   {
     path: "/thong-ke",
-    name: "Thống Kê",
+    name: "Thống Kê Truy Cập",
+    icon: "pe-7s-graph3",
+    component: ThongKe,
+    layout: "/admin"
+  },
+  {
+    path: "/huong-dan",
+    name: "Hướng Dẫn Sử Dụng",
+    icon: "pe-7s-info",
+    component: HuongDan,
+    layout: "/admin"
+  },
+  {
+    path: "/user",
+    name: "Thông Tin Tài Khoản",
+    icon: "pe-7s-user",
+    component: UserProfile,
+    layout: "/admin"
+  },
+  {
+    path: "/icon",
+    name: "Icon",
     icon: "pe-7s-graph3",
     component: Icons,
     layout: "/admin"
