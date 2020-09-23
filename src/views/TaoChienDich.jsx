@@ -24,6 +24,7 @@ import {
   FormControl,
   Form,
 } from "react-bootstrap";
+import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form';
 import Select from 'react-select';
 import { FormInputs } from "components/FormInputs/FormInputs.jsx";
@@ -65,14 +66,11 @@ class TaoChienDich extends Component {
     this.setState({ trucTiepChuyenTiepLinkBot });
   }
 
-  luuLai = () => {
-
-  }
-
   render() {
+    
     return (
       <div className="content">
-        <Form onSubmit={this.luuLai}>
+        <Form onSubmit={this.handleSubmit} initialValues>
           <Row>
             <Col md={5}>
               <ReduxField
@@ -237,7 +235,10 @@ class TaoChienDich extends Component {
   }
 }
 
-export default reduxForm({
+export default connect(
+  state => ({
+    initialValues: state
+  }),
+)(reduxForm({
   form: 'TaoChienDichForm',
-})(TaoChienDich);
-
+})(TaoChienDich))
