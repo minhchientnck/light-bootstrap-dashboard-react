@@ -18,7 +18,7 @@ class LoginForm extends Component {
         </div>
         <div className="text-right p-t-13 p-b-10">
           <span className="txt1">Quên </span>
-          <a href="#" className="txt2">tài khoản / mật khẩu?</a>
+          <Link to="/forget-password" className="txt2">tài khoản / mật khẩu?</Link>
         </div>
         <div className="container-login100-form-btn">
           <button className="login100-form-btn">Đăng nhập</button>

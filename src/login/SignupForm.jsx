@@ -13,7 +13,7 @@ class SignupForm extends Component {
           <span className="focus-input100" />
         </div>
         <div className="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-          <input className="input100" type="text" name="email" placeholder="Địa chỉ email" />
+          <input className="input100" type="email" name="email" placeholder="Địa chỉ email" />
           <span className="focus-input100" />
         </div>
         <div className="wrap-input100 validate-input m-b-16" data-validate="Please enter password">

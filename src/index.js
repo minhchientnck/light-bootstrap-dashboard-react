@@ -27,7 +27,7 @@ import "./assets/css/demo.css";
 import "./assets/css/pe-icon-7-stroke.css";
 
 import AdminLayout from "layouts/Admin.jsx";
-import { Login, Signup } from './login';
+import { Login, Signup, ForgetPassword } from './login';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -35,6 +35,7 @@ ReactDOM.render(
       <Route path="/admin" render={props => <AdminLayout {...props} />} />
       <Route path="/login" render={props => <Login {...props} />} />
       <Route path="/signup" render={props => <Signup {...props} />} />
+      <Route path="/forget-password" render={props => <ForgetPassword {...props} />} />
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </BrowserRouter>,
