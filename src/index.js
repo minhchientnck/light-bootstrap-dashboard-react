@@ -17,8 +17,13 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import { Provider } from "react-redux";
+import rootReducer from './reducers';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -29,15 +34,19 @@ import "./assets/css/pe-icon-7-stroke.css";
 import AdminLayout from "layouts/Admin.jsx";
 import { Login, Signup, ForgetPassword } from './login';
 
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/admin" render={props => <AdminLayout {...props} />} />
-      <Route path="/login" render={props => <Login {...props} />} />
-      <Route path="/signup" render={props => <Signup {...props} />} />
-      <Route path="/forget-password" render={props => <ForgetPassword {...props} />} />
-      <Redirect from="/" to="/admin/dashboard" />
-    </Switch>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/admin" render={props => <AdminLayout {...props} />} />
+        <Route path="/login" render={props => <Login {...props} />} />
+        <Route path="/signup" render={props => <Signup {...props} />} />
+        <Route path="/forget-password" render={props => <ForgetPassword {...props} />} />
+        <Redirect from="/" to="/admin/dashboard" />
+      </Switch>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );

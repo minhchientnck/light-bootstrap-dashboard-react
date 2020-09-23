@@ -17,6 +17,7 @@
 */
 import React, { Component } from "react";
 import { Tooltip, OverlayTrigger, Grid, Row, Col, Table, Button } from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 import CustomButton from "components/CustomButton/CustomButton.jsx";
 import Card from "components/Card/Card.jsx";
@@ -105,7 +106,7 @@ class ChienDich extends Component {
                   ctTableFullWidth
                   ctTableResponsive
                   actions={<Button onClick={this.backToChienDich}>Back</Button>}
-                  content={<TaoChienDich />}
+                  content={<TaoChienDich {...this.taoChienDichprops} />}
                 />}
             </Col>
           </Row>
@@ -114,5 +115,17 @@ class ChienDich extends Component {
     );
   }
 }
+
+ChienDich.propTypes = {
+  chiendich: PropTypes.shape({}),
+};
+
+ChienDich.defaultProps = {
+  chiendich: {
+    tenchiendich: 'abcccc',
+    tructiepchuyentieplinkban: 0,
+    tructiepchuyentieplinkbot: 0,
+  }
+};
 
 export default ChienDich;

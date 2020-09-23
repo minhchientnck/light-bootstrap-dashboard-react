@@ -785,3 +785,11 @@
   margin-top: -7px;
   border-width: 7px 7px 7px 0;
 }
+
+/*-------------------------------------------------*/
+.mg-l-0 {
+ margin-left: 0;
+}
+.mg-r-0 {
+  margin-right: 0;
+ }
