@@ -16,13 +16,17 @@
 
 */
 import React, { Component } from "react";
+import './styles.css';
 
 export class Card extends Component {
   render() {
     return (
       <div className={"card" + (this.props.plain ? " card-plain" : "")}>
         <div className={"header" + (this.props.hCenter ? " text-center" : "")}>
-          <h4 className="title">{this.props.title}</h4>
+          <div className="d-flex flex-row">
+            <h4 className="title">{this.props.title}</h4>
+            {this.props.actions ? <div className="actions">{this.props.actions}</div> : null}
+          </div>
           <p className="category">{this.props.category}</p>
         </div>
         <div

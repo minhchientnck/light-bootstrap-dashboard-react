@@ -17,12 +17,12 @@
 */
 import Dashboard from "views/Dashboard.jsx";
 import UserProfile from "views/UserProfile.jsx";
-import TableList from "views/TableList.jsx";
+import TenMien from "views/TenMien.jsx";
+import ChienDich from "views/ChienDich.jsx";
 import Typography from "views/Typography.jsx";
 import Icons from "views/Icons.jsx";
 import Maps from "views/Maps.jsx";
 import Notifications from "views/Notifications.jsx";
-import Upgrade from "views/Upgrade.jsx";
 
 const dashboardRoutes = [
   {
@@ -36,14 +36,14 @@ const dashboardRoutes = [
     path: "/ten-mien",
     name: "Tên Miền",
     icon: "pe-7s-world",
-    component: UserProfile,
+    component: TenMien,
     layout: "/admin"
   },
   {
     path: "/chien-dich",
     name: "Chiến Dịch",
     icon: "pe-7s-note2",
-    component: TableList,
+    component: ChienDich,
     layout: "/admin"
   },
   {
