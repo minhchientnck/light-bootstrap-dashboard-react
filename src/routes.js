@@ -15,13 +15,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Dashboard from "views/Dashboard.jsx";
-import UserProfile from "views/UserProfile.jsx";
-import TenMien from "views/TenMien.jsx";
-import ChienDich from "views/ChienDich.jsx";
-import ThongKe from "views/ThongKe.jsx";
-import NapTien from "views/NapTien.jsx";
-import HuongDan from "views/HuongDan.jsx";
+import Dashboard from "views/TongQuan/Dashboard.jsx";
+import UserProfile from "views/UserProfile/UserProfile.jsx";
+import TenMien from "views/TenMien/TenMien.jsx";
+import ChienDich from "views/ChienDich/ChienDich.jsx";
+import ThongKe from "views/ThongKe/ThongKe.jsx";
+import NapTien from "views/NapTien/NapTien.jsx";
+import HuongDan from "views/HuongDan/HuongDan.jsx";
 
 import Typography from "views/Typography.jsx";
 import Icons from "views/Icons.jsx";

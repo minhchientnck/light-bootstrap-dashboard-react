@@ -1,10 +1,8 @@
-const initialState = {}
+import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import * as ChienDichReducers from './views/ChienDich/Reducers';
 
-const todoApp = (state, action) => {
-  if (typeof state === 'undefined') {
-    return initialState;
-  }
-  return state;
-};
-
-export default todoApp;
+export default combineReducers({
+  form: formReducer,
+  ChienDichReducers
+});
