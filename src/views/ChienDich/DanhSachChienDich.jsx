@@ -21,7 +21,8 @@ import PropTypes from 'prop-types';
 
 import CustomButton from "components/CustomButton/CustomButton.jsx";
 import Card from "components/Card/Card.jsx";
-import { thArray, tdArray } from "variables/Variables.jsx";
+import ReactDataTable from '../../components/DataTable/ReactDataTable';
+import { thArray, tdArray, ColumnsDanhSachChienDich, data } from "variables/Variables.jsx";
 
 class DanhSachChienDich extends Component {
   constructor(props) {
@@ -34,7 +35,11 @@ class DanhSachChienDich extends Component {
   render() {
     return (
       <div className="content">
-        <Table striped hover>
+        <ReactDataTable
+          columns={ColumnsDanhSachChienDich}
+          data={data}
+        />
+        {/* <Table striped hover>
           <thead>
             <tr>
               {thArray.map((prop, key) => {
@@ -66,7 +71,7 @@ class DanhSachChienDich extends Component {
               );
             })}
           </tbody>
-        </Table>
+        </Table> */}
       </div>
     );
   }

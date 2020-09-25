@@ -540,7 +540,7 @@ var responsiveSales = [
     "screen and (max-width: 640px)",
     {
       axisX: {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
           return value[0];
         }
       }
@@ -586,7 +586,7 @@ var responsiveBar = [
     {
       seriesBarDistance: 5,
       axisX: {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
           return value[0];
         }
       }
@@ -597,6 +597,59 @@ var legendBar = {
   names: ["Tesla Model S", "BMW 5 Series"],
   types: ["info", "danger"]
 };
+
+const ColumnsDanhSachChienDich = [
+  {
+    name: 'Ngày Tạo',
+    selector: 'ngaytao',
+    sortable: true,
+  },
+  {
+    name: 'Tên miền',
+    selector: 'tenmien',
+    sortable: true,
+  },
+  {
+    name: 'Tên chiến dịch',
+    selector: 'tenchiendich',
+    sortable: true,
+  },
+  {
+    name: 'Link bán hàng',
+    selector: 'linkban',
+    sortable: true,
+  },
+  {
+    name: 'Link bot',
+    selector: 'linkbot',
+    sortable: true,
+  },
+  {
+    name: 'Tình trạng',
+    selector: 'tinhtrang',
+  },
+  {
+    name: 'Hành động',
+  },
+];
+
+const data = [
+  {
+    "id": 1,
+     "ngaytao": 1601007548000,
+    "tenchiendich": "Chien Dich 01",
+    "subdomain": "",
+    "tenmien": "jp-skincare.info",
+    "chonnguon": "facebook",
+    "chonthietbi": "mobile",
+    "quocgiachophep": "Việt Nam",
+    "maximum": 10,
+    "linkban": "linkban.com",
+    "linkbot": "linkbot.com",
+    "tructiepchuyentieplinkban": 0,
+    "tructiepchuyentieplinkbot": 0
+  }
+]
 
 module.exports = {
   style, // For notifications (App container and Notifications view)
@@ -612,5 +665,7 @@ module.exports = {
   dataBar,
   optionsBar,
   responsiveBar,
-  legendBar // For charts (Dashboard view)
+  legendBar, // For charts (Dashboard view)
+  ColumnsDanhSachChienDich,
+  data,
 };
