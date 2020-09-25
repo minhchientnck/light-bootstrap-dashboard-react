@@ -18,7 +18,7 @@ export const taoChienDichFailure = error => ({
   error,
 });
 
-export const taoChienDich = data => dispatch => {
+export const createChienDich = data => dispatch => {
   dispatch(startTaoChienDich());
   dispatch(taoChienDichSuccess(data));
 }

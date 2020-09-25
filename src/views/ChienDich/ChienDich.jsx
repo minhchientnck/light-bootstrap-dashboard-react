@@ -40,7 +40,7 @@ class ChienDich extends Component {
     };
   }
 
-  taoChienDich = () => {
+  createChienDich = () => {
     this.setState({
       isCreate: true
     });
@@ -53,7 +53,7 @@ class ChienDich extends Component {
   }
 
   editChienDich = () => {
-    this.taoChienDich();
+    this.createChienDich();
   }
 
   deleteChienDich = () => {
@@ -62,7 +62,7 @@ class ChienDich extends Component {
 
   saveChienDich = values => {
     console.log(values);
-    this.props.actions.taoChienDich(values);
+    this.props.actions.createChienDich(values);
   }
 
   render() {
@@ -77,7 +77,7 @@ class ChienDich extends Component {
                 category=""
                 ctTableFullWidth
                 ctTableResponsive
-                actions={<Button onClick={this.taoChienDich}>Tạo Chiến Dịch</Button>}
+                actions={<Button onClick={this.createChienDich}>Tạo Chiến Dịch</Button>}
                 content={<DanhSachChienDich
                   editChienDich={this.editChienDich}
                   deleteChienDich={this.deleteChienDich}
@@ -107,7 +107,7 @@ class ChienDich extends Component {
 ChienDich.propTypes = {
   chiendich: PropTypes.shape({}),
   actions: {
-    taoChienDich: PropTypes.func,
+    createChienDich: PropTypes.func,
   },
 };
 
